@@ -17,6 +17,8 @@ public class CoordinateLabel : MonoBehaviour
     void Awake()
     {
         label = GetComponent<TextMeshPro>();
+        label.enabled = false;
+
         waypoint = GetComponentInParent<Waypoint>(); // waypoint skrypt znajduję się w textMesh , Tile jest parentem
         DisplayCoordinates();
     }
@@ -28,6 +30,29 @@ public class CoordinateLabel : MonoBehaviour
         {
             DisplayCoordinates();
             UpadeObjectName();
+        }
+
+        ColorCoordinates();
+        ToggleLabels();
+    }
+
+    void ToggleLabels()
+    {
+        if(Input.GetKeyDown(KeyCode.C))
+        {
+            label.enabled = !label.IsActive();
+        }
+    }
+
+    private void ColorCoordinates()
+    {
+        if(waypoint.IsPlaceable)
+        {
+            label.color = defaultColor;
+        }
+        else
+        {
+            label.color = blockedColor;
         }
     }
 
