@@ -12,7 +12,7 @@ public class Waypoint : MonoBehaviour
     //    }
     //}
 
-    [SerializeField] GameObject towerPrefab;
+    [SerializeField] Tower towerPrefab;
     
     [SerializeField] bool isPlaceable;
     public bool IsPlaceable { get { return isPlaceable; } }  // chcemy skorzystaæ z tego w innm skrypcie ale nie chcemy mieæ mo¿liwoœci zmiany ¿eby nie zrobiæ problemów dlatego ustawiamy geta 
@@ -22,8 +22,8 @@ public class Waypoint : MonoBehaviour
     {
         if (isPlaceable)
         {
-            Instantiate(towerPrefab, transform.position, Quaternion.identity); //trzeba mu wskazaæ rotacje - quaternion
-            isPlaceable = false;
+            bool isPlaced = towerPrefab.CreateTower(towerPrefab, transform.position);
+            isPlaceable = !isPlaced;
         }
     }
 
