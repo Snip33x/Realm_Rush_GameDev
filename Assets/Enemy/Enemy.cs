@@ -17,7 +17,7 @@ public class Enemy : MonoBehaviour
 
     public void RewardGold()
     {
-        if (bank == null) { return; } //making sure we have bank object in the scene
+        if (bank == null) { return; } //making sure we have bank object in the scenee
         bank.Deposit(goldReward);
     }
 
