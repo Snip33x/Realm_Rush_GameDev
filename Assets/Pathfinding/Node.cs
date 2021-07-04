@@ -13,7 +13,7 @@ public class Node
 
     public Node(Vector2Int coordinates, bool isWalkable)
     {
-        this.coordinates = coordinates; //makes connect public variables with constructor's
+        this.coordinates = coordinates; //this makes connect public variables with constructor's
         this.isWalkable = isWalkable;
     }
 }

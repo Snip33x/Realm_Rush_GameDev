@@ -14,6 +14,16 @@ public class GridManager : MonoBehaviour
         CreateGrid();    
     }
 
+    public Node GetNode(Vector2Int coordinates) //now we can access Nodes and pass coordinates that we are looking for
+    {
+        if(grid.ContainsKey(coordinates))
+        {
+        return grid[coordinates];
+        }
+
+        return null;
+    }
+
     void CreateGrid()
     {
         for (int x = 0; x < gridSize.x; x++)
