@@ -2144,6 +2144,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5519383829845993262, guid: 0acf38dbaade9fc4b9a60d71e66078fd, type: 3}
   m_PrefabInstance: {fileID: 1563225612}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &174896431 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 372393698230883135, guid: 094ae802eb1cc934c9581fb0bfa81bf8, type: 3}
+  m_PrefabInstance: {fileID: 372393697921764628}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &174896432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 174896431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2df09ab27c521c438fa9cb8f1b0b136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentSearchNode:
+    coordinates: {x: 0, y: 5}
+    isWalkable: 0
+    isExplored: 0
+    isPath: 0
 --- !u!4 &175813850 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5519383829845993262, guid: 0acf38dbaade9fc4b9a60d71e66078fd, type: 3}
@@ -20068,7 +20090,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f3ff95d9382c4e48b9a0d0662dbf52c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridSize: {x: 4, y: 4}
+  gridSize: {x: 20, y: 20}
 --- !u!4 &1687632997
 Transform:
   m_ObjectHideFlags: 0
@@ -25965,6 +25987,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 372393698230883128, guid: 094ae802eb1cc934c9581fb0bfa81bf8, type: 3}
+      propertyPath: poolSize
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 372393698230883128, guid: 094ae802eb1cc934c9581fb0bfa81bf8, type: 3}
       propertyPath: spawnTimer
       value: 2.5
       objectReference: {fileID: 0}
@@ -26096,7 +26122,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8631382987801715603, guid: cc36d3adc55e34c48831bcd009649cda, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8631382987801715607, guid: cc36d3adc55e34c48831bcd009649cda, type: 3}
       propertyPath: m_Pivot.x
