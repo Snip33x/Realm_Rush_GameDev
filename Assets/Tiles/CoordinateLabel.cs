@@ -79,8 +79,9 @@ public class CoordinateLabel : MonoBehaviour
 
     private void DisplayCoordinates()
     {
-        coordinates.x = Mathf.RoundToInt(transform.parent.position.x / UnityEditor.EditorSnapSettings.move.x); //because this script is on a child -- sprawdzić potem Convert.toint32 - wg mnie nie używać żeby nie korzystać niepotrzebnie z using System
-        coordinates.y = Mathf.RoundToInt(transform.parent.position.z / UnityEditor.EditorSnapSettings.move.z); 
+        if(gridManager == null) { return; }
+        coordinates.x = Mathf.RoundToInt(transform.parent.position.x / gridManager.UnityGridSize); //because this script is on a child -- sprawdzić potem Convert.toint32 - wg mnie nie używać żeby nie korzystać niepotrzebnie z using System
+        coordinates.y = Mathf.RoundToInt(transform.parent.position.z / gridManager.UnityGridSize); 
 
         label.text = coordinates.x + "," + coordinates.y;
     }

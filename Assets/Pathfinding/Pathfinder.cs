@@ -86,10 +86,10 @@ public class Pathfinder : MonoBehaviour
         }
     }
 
-    List<Node> BuildPath()
+    List<Node> BuildPath() 
     {
         List<Node> path = new List<Node>();
-        Node currentNode = destinationNode; //we are starting from the end
+        Node currentNode = destinationNode; //we are starting from the end  dlatego ¿e najpierw w BFS my explorujemy i szukamy gdzie jest koniec, a tutaj dziêki temu ¿e ju¿ znaleŸliœmy gdzie mamy dojœæ, to budujemy œcie¿kê
 
         path.Add(currentNode);
         currentNode.isPath = true;
