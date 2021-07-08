@@ -18,11 +18,13 @@ public class Tile : MonoBehaviour
     public bool IsPlaceable { get { return isPlaceable; } }  // chcemy skorzystaæ z tego w innm skrypcie ale nie chcemy mieæ mo¿liwoœci zmiany ¿eby nie zrobiæ problemów dlatego ustawiamy geta 
 
     GridManager gridManager;
+    Pathfinder pathfinder;
     Vector2Int coordinates = new Vector2Int();
 
     void Awake()
     {
         gridManager = FindObjectOfType<GridManager>();
+        pathfinder = FindObjectOfType<Pathfinder>();
     }
 
     void Start()
@@ -31,7 +33,7 @@ public class Tile : MonoBehaviour
         {
             coordinates = gridManager.GetCoordinatesFromPosition(transform.position);
 
-            if(!isPlaceable)
+            if(!isPlaceable)   //TUTAJ PATHFINDER WIE ¯E JEST ZABLOKOWANY KWADRAT
             {
                 gridManager.BlockNode(coordinates);
             }
@@ -40,10 +42,11 @@ public class Tile : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (isPlaceable)
+        if (gridManager.GetNode(coordinates).isWalkable && !pathfinder.WillBlockPath(coordinates))
         {
             bool isPlaced = towerPrefab.CreateTower(towerPrefab, transform.position);
             isPlaceable = !isPlaced;
+            gridManager.BlockNode(coordinates);
         }
     }
 
