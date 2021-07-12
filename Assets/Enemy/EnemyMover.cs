@@ -65,7 +65,7 @@ public class EnemyMover : MonoBehaviour
 
             //Przeskakiwanie po Tilesach    
             //transform.position = waypoint.transform.position;
-            //Debug.Log(waypoint.name); - to see how yield works
+            //Debug.Log(waypoint.name); - to see how yield workss
             //yield return new WaitForSeconds(waitTime);
         }
 
